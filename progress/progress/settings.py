@@ -20,7 +20,7 @@ SECRET_KEY = 'django-insecure-3(%iv5pix=2(s$)i3-gi^jo10*cpu!r11hyli2r06s+f(h!%79
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -32,6 +32,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'service',
+    'django_celery_results',
 ]
 
 MIDDLEWARE = [
@@ -140,3 +142,30 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'
+
+#CELERY_BROKER_URL = 'db+mysql://root:es220800@127.0.0.1/celery_progress'
+
+CELERY_ACECPT_CONTENT = ['json']
+
+CELERY_TASK_SERIALIZER = 'json'
+
+CELERY_RESULT_BACKEND = 'django-db'
+
+# mysql
+#CELERY_RESULT_BACKEND = 'db+mysql://root:es220800@127.0.0.1/celery_progress'
+
+#CELERY_RESULT_BACKEND = 'database'
+
+# # use custom schema for the database result backend.
+# database_table_schemas = {
+#     'task': 'celery',
+#     'group': 'celery',
+# }
+
+# # use custom table names for the database result backend.
+# database_table_names = {
+#     'task': 'myapp_taskmeta',
+#     'group': 'myapp_groupmeta',
+# }

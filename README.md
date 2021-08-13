@@ -5,17 +5,17 @@ Este simples projeto demonstra uma maneira de implementar uma `barra de progress
 ### Bibliotecas utilizadas.
 * **Python 3.9.6**
 * **django 3.2.6**
-* **mysqlclient 2.0.3** ----> Base de dados que será utilizada pelo `django`.
-* **redis 3.5.3** ------------> Base de dados que será alimentado `celery`.
-* **gevent 21.8.0** --------> Auxiliará na compatibilidade do `celery` no `windows 10`
-* **celery 5.1.2** ----------> Criará `tasks` para monitorar o progresso de execução.
-* **django-celery-results 2.2.0** ->Intermediará a comunicação `django` com o `celery`.
+* **mysqlclient 2.0.3** ==> Base de dados que será utilizada pelo `django`.
+* **redis 3.5.3** ==> Base de dados que será alimentada `celery`.
+* **gevent 21.8.0** ==> Auxiliará na compatibilidade do `celery` no `windows 10`
+* **celery 5.1.2** ==> Criará `tasks` para monitorar o progresso de execução.
+* **django-celery-results 2.2.0** ==>Intermediará a comunicação do `django` com o `celery`.
 
 
 ## Estrutura do projeto
 ```txt
 ├── progress
-│   ├── progress
+│   ├── progress # Site
 │   │   ├── __init__.py # Inicializa o celery.
 │   │   ├── asgi.py
 │   │   ├── celery.py # configurações pra inicialização do celery.
@@ -23,7 +23,7 @@ Este simples projeto demonstra uma maneira de implementar uma `barra de progress
 │   │   ├── settings.py # Configurações do sistema.
 │   │   └── urls.py # urls do site.
 │   │
-│   ├── service
+│   ├── service # App
 │   │   ├── admin.py
 │   │   ├── apps.py
 │   │   ├── models.py
@@ -42,15 +42,20 @@ Este simples projeto demonstra uma maneira de implementar uma `barra de progress
 ## Instalação (Windows)
 
 Primeiramente é necessário instalar o **python 3.9.6**.
-	Baixe e instale o [python](https://www.python.org/ftp/python/3.9.6/python-3.9.6-amd64.exe).
+Baixe e instale o [python](https://www.python.org/ftp/python/3.9.6/python-3.9.6-amd64.exe).
 Baixe e instale o servidor [Redis](https://github.com/downloads/rgl/redis/redis-2.4.6-setup-64-bit.exe).
-Agora clone o repositório:
+Após clonar o repositório:
+
+Criando ambiente virtual.
 ```bash
-# criando ambiente virtual
 $ python -m venv venv
-# ativando o ambiente virtual
+```
+Ativando o ambiente virtual.
+```bash
 $ source venv/Scripts/activate
-# instalando dependências de pacotes
+```
+Instalando dependências de pacotes.
+```bash
 $ pip install -r requirements.txt
 ```
 ## Executando o Sistema

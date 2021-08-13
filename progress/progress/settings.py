@@ -143,29 +143,11 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Configurações do Celery
 CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'
-
-#CELERY_BROKER_URL = 'db+mysql://root:es220800@127.0.0.1/celery_progress'
 
 CELERY_ACECPT_CONTENT = ['json']
 
 CELERY_TASK_SERIALIZER = 'json'
 
 CELERY_RESULT_BACKEND = 'django-db'
-
-# mysql
-#CELERY_RESULT_BACKEND = 'db+mysql://root:es220800@127.0.0.1/celery_progress'
-
-#CELERY_RESULT_BACKEND = 'database'
-
-# # use custom schema for the database result backend.
-# database_table_schemas = {
-#     'task': 'celery',
-#     'group': 'celery',
-# }
-
-# # use custom table names for the database result backend.
-# database_table_names = {
-#     'task': 'myapp_taskmeta',
-#     'group': 'myapp_groupmeta',
-# }

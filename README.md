@@ -42,8 +42,11 @@ Este simples projeto demonstra uma maneira de implementar uma `barra de progress
 ## Instalação (Windows)
 
 Primeiramente é necessário instalar o **python 3.9.6**.
+
 Baixe e instale o [python](https://www.python.org/ftp/python/3.9.6/python-3.9.6-amd64.exe).
+
 Baixe e instale o servidor [Redis](https://github.com/downloads/rgl/redis/redis-2.4.6-setup-64-bit.exe).
+
 Após clonar o repositório:
 
 Criando ambiente virtual.
@@ -71,7 +74,7 @@ Execute o sistema.
 ```bash
 $ python manage.py runserver
 ```
-Agora em outra aba do terminal, dentro do repositório, inicie o `ambiente virtual`, entre na pasta `progress` e inicialize o o `worker` do `celery`
+Agora em outra aba do terminal, dentro do repositório, inicie o `ambiente virtual`, entre na pasta `progress` e inicialize o `worker` do `celery`
 ```bash
 $ celery -A progress worker -l info -P gevent
 ```

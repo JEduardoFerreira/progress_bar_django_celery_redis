@@ -6,10 +6,11 @@ Este simples projeto demonstra uma maneira de implementar uma `barra de progress
 * **Python 3.9.6**
 * **django 3.2.6**
 * **mysqlclient 2.0.3** ==> Base de dados que será utilizada pelo `django`.
-* **redis 3.5.3** ==> Base de dados que será alimentada `celery`.
+* **redis 3.5.3** ==> Base de dados que será alimentada pelo `celery`.
 * **gevent 21.8.0** ==> Auxiliará na compatibilidade do `celery` no `windows 10`
-* **celery 5.1.2** ==> Criará `tasks` para monitorar o progresso de execução.
-* **django-celery-results 2.2.0** ==>Intermediará a comunicação do `django` com o `celery`.
+* **celery 5.1.2** ==> Criará `tasks` para controlar execução das tarefas.
+* **django-celery-results 2.2.0** ==> Intermediará a comunicação do `django` com o `celery`.
+* **celery-progress 0.1.1** ==> Disponibilizará informações à respeito do `progresso` de execução das tarefas.
 
 
 ## Estrutura do projeto

@@ -25,6 +25,11 @@ Este simples projeto demonstra uma maneira de implementar uma `barra de progress
 │   │   └── urls.py # urls do site.
 │   │
 │   ├── service # App
+│   │   ├── migrations
+│   │   ├── templates
+│   │   │   ├── html # Paginas do App.
+│   │   │   └── js # Scripts do App.
+│   │   │
 │   │   ├── admin.py
 │   │   ├── apps.py
 │   │   ├── models.py
